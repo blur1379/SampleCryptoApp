@@ -11,8 +11,6 @@
 		A9C63F2F2C1B8185000FB14A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C63F2E2C1B8185000FB14A /* ContentView.swift */; };
 		A9C63F312C1B8186000FB14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C63F302C1B8186000FB14A /* Assets.xcassets */; };
 		A9C63F342C1B8186000FB14A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C63F332C1B8186000FB14A /* Preview Assets.xcassets */; };
-		A9C63F362C1B8186000FB14A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C63F352C1B8186000FB14A /* Persistence.swift */; };
-		A9C63F392C1B8186000FB14A /* SampleCryptoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9C63F372C1B8186000FB14A /* SampleCryptoApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +19,6 @@
 		A9C63F2E2C1B8185000FB14A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9C63F302C1B8186000FB14A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C63F332C1B8186000FB14A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A9C63F352C1B8186000FB14A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		A9C63F382C1B8186000FB14A /* SampleCryptoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SampleCryptoApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +54,6 @@
 				A9C63F2C2C1B8185000FB14A /* SampleCryptoAppApp.swift */,
 				A9C63F2E2C1B8185000FB14A /* ContentView.swift */,
 				A9C63F302C1B8186000FB14A /* Assets.xcassets */,
-				A9C63F352C1B8186000FB14A /* Persistence.swift */,
-				A9C63F372C1B8186000FB14A /* SampleCryptoApp.xcdatamodeld */,
 				A9C63F322C1B8186000FB14A /* Preview Content */,
 			);
 			path = SampleCryptoApp;
@@ -143,8 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C63F392C1B8186000FB14A /* SampleCryptoApp.xcdatamodeld in Sources */,
-				A9C63F362C1B8186000FB14A /* Persistence.swift in Sources */,
 				A9C63F2F2C1B8185000FB14A /* ContentView.swift in Sources */,
 				A9C63F2D2C1B8185000FB14A /* SampleCryptoAppApp.swift in Sources */,
 			);
@@ -352,19 +344,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A9C63F372C1B8186000FB14A /* SampleCryptoApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A9C63F382C1B8186000FB14A /* SampleCryptoApp.xcdatamodel */,
-			);
-			currentVersion = A9C63F382C1B8186000FB14A /* SampleCryptoApp.xcdatamodel */;
-			path = SampleCryptoApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A9C63F212C1B8185000FB14A /* Project object */;
 }
