@@ -12,6 +12,7 @@
 		A9C63F342C1B8186000FB14A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C63F332C1B8186000FB14A /* Preview Assets.xcassets */; };
 		A9C63F402C1B8348000FB14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C63F3F2C1B8348000FB14A /* Assets.xcassets */; };
 		A9C63F432C1B8455000FB14A /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C63F422C1B8455000FB14A /* Color+Extension.swift */; };
+		A9D25A722C1CD57500F34A24 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D25A712C1CD57500F34A24 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		A9C63F332C1B8186000FB14A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9C63F3F2C1B8348000FB14A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C63F422C1B8455000FB14A /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		A9D25A712C1CD57500F34A24 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				A9C63F2C2C1B8185000FB14A /* SampleCryptoAppApp.swift */,
 				A9C63F2E2C1B8185000FB14A /* ContentView.swift */,
+				A9D25A6E2C1CD49F00F34A24 /* Core */,
 				A9C63F412C1B8417000FB14A /* Extensions */,
 				A9C63F3F2C1B8348000FB14A /* Assets.xcassets */,
 				A9C63F322C1B8186000FB14A /* Preview Content */,
@@ -76,6 +79,30 @@
 				A9C63F422C1B8455000FB14A /* Color+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9D25A6E2C1CD49F00F34A24 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A9D25A702C1CD4D100F34A24 /* Views */,
+				A9D25A6F2C1CD4C400F34A24 /* ViewModels */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A9D25A6F2C1CD4C400F34A24 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A9D25A702C1CD4D100F34A24 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9D25A712C1CD57500F34A24 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C63F2F2C1B8185000FB14A /* ContentView.swift in Sources */,
+				A9D25A722C1CD57500F34A24 /* HomeView.swift in Sources */,
 				A9C63F432C1B8455000FB14A /* Color+Extension.swift in Sources */,
 				A9C63F2D2C1B8185000FB14A /* SampleCryptoAppApp.swift in Sources */,
 			);
