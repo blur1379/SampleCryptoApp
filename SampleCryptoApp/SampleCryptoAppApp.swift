@@ -13,7 +13,10 @@ struct SampleCryptoAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                HomeView()
+                    .navigationBarHidden(true)
+            }
 
         }
     }
