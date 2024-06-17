@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject private var vm : HomeViewModel
     @State private var showPortfolio = false
     
     var body: some View {
@@ -19,7 +20,9 @@ struct HomeView: View {
             // content layer
             VStack {
                 headerView()
-                
+                List {
+                    CoinRowView(coin: DeveloperPreview.instance.coin, showHoldingColumns: false)
+                }
                 Spacer(minLength: 0)
             }
         }
@@ -28,6 +31,7 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(HomeViewModel())
 }
 
 extension HomeView {
