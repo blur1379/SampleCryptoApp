@@ -20,4 +20,10 @@ extension Double {
         
         return formatter
     }
+    
+    func asCurrencyWith6Decimals() -> String {
+        let number = NSNumber(value: self)
+        return currencyFormatter6.string(from: number) ?? "0.00"
+        
+    }
 }
