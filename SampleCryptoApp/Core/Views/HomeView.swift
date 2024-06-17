@@ -20,9 +20,16 @@ struct HomeView: View {
             // content layer
             VStack {
                 headerView()
-                List {
-                    CoinRowView(coin: DeveloperPreview.instance.coin, showHoldingColumns: false)
+                
+                columnTitles()
+                if !showPortfolio {
+                    allCoinList()
+                        .transition(.move(edge: .leading))
+                } else {
+                    portfolioCoinList()
+                        .transition(.move(edge: .trailing))
                 }
+                
                 Spacer(minLength: 0)
             }
         }
@@ -58,5 +65,44 @@ extension HomeView {
                 }
         }
         .padding(.horizontal)
+    }
+    
+    @ViewBuilder
+    func allCoinList() -> some View {
+        List {
+            ForEach(vm.allCoins) { coin in
+                CoinRowView(coin: coin, showHoldingColumns: false)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+            }
+        }
+        .listStyle(.plain)
+    }
+    
+    @ViewBuilder
+    func portfolioCoinList() -> some View {
+        List {
+            ForEach(vm.portfolioCoin) { coin in
+                CoinRowView(coin: coin, showHoldingColumns: true)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+            }
+        }
+        .listStyle(.plain)
+    }
+    
+    @ViewBuilder
+    private func columnTitles() -> some View {
+        HStack {
+            Text("Coin")
+            Spacer()
+            if showPortfolio {
+                Text("Holdings")
+            }
+            Text("Price")
+                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        }
+        .font(.caption)
+        .foregroundStyle(Color.theme.secondaryText)
+        .padding(.horizontal)
+        
     }
 }
