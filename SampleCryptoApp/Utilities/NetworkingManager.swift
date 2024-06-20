@@ -9,7 +9,7 @@ import Foundation
 import Combine
 class NetworkingManager {
     
-    enum NetworkingError {
+    enum NetworkingError: Error {
         case badURLResponse(url: URL)
         case unknown
         
