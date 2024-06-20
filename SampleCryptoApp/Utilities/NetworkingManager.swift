@@ -9,6 +9,20 @@ import Foundation
 import Combine
 class NetworkingManager {
     
+    enum NetworkingError {
+        case badURLResponse
+        case unknown
+        
+        var errorDescription: String? {
+            switch self {
+            case .badURLResponse:
+                return "Bad Response from URL."
+            case .unknown:
+                return "Unknown error occured"
+            }
+        }
+    }
+    
     static func download(url: URL) -> AnyPublisher<Data,any Error> {
         return URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global(qos: .default))
