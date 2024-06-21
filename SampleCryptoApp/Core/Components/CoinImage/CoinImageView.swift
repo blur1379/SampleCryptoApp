@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-class CoinImageViewModel: ObservableObject {
-    @Published var image: UIImage? = nil
-    @Published var isLoading: Bool = true
-    
-    init() {
-      getImage()
-    }
-    
-    func getImage() {
-        
-    }
-}
-
 struct CoinImageView: View {
     
     @StateObject var vm: CoinImageViewModel = CoinImageViewModel()

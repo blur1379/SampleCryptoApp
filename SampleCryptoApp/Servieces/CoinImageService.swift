@@ -12,6 +12,10 @@ class CoinImageService {
     @Published var image: UIImage? = nil
     var imageSubscription: AnyCancellable?
     
+    init(urlString: String) {
+        getCoinImage(urlString: urlString)
+    }
+    
     private func getCoinImage(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         
