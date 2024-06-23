@@ -9,6 +9,8 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
+    
+    @Published var statistics: [StatisticModel] = []
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoin: [CoinModel] = []
     
