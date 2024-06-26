@@ -47,7 +47,7 @@ struct HomeView: View {
                     Spacer(minLength: 0)
                 }
                 .background(
-                    NavigationLink(isActive: $showDetailView, destination: { DetailView(coin: $selectedCoin) }, label: { EmptyView() })
+                    NavigationLink(isActive: $showDetailView, destination: { DetailLoadingView(coin: $selectedCoin) }, label: { EmptyView() })
                 )
                 .navigationBarHidden(true)
             }
