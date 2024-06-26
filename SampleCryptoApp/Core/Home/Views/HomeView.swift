@@ -12,34 +12,44 @@ struct HomeView: View {
     @EnvironmentObject private var vm : HomeViewModel
     @State private var showPortfolio = false
     @State private var showPortfolioView = false
+    
+    @State private var selectedCoin: CoinModel? = nil
+    @State private var showDetailView: Bool = false
     var body: some View {
-        ZStack {
-            // background layer
-            Color.theme.background
-                .sheet(isPresented: $showPortfolioView, content: {
-                    PortfolioView()
-                        .environmentObject(vm)
-                })
-            
-            // content layer
-            VStack {
-                headerView()
+       
+            NavigationStack {
+                ZStack {
+                // background layer
+                Color.theme.background
+                    .sheet(isPresented: $showPortfolioView, content: {
+                        PortfolioView()
+                            .environmentObject(vm)
+                    })
                 
-                HomeStatsView(showPortfolio: $showPortfolio)
-                
-                SearchBarView(searchText: $vm.searchText)
-                
-                columnTitles()
-                
-                if !showPortfolio {
-                    allCoinList()
-                        .transition(.move(edge: .leading))
-                } else {
-                    portfolioCoinList()
-                        .transition(.move(edge: .trailing))
+                // content layer
+                VStack {
+                    headerView()
+                    
+                    HomeStatsView(showPortfolio: $showPortfolio)
+                    
+                    SearchBarView(searchText: $vm.searchText)
+                    
+                    columnTitles()
+                    
+                    if !showPortfolio {
+                        allCoinList()
+                            .transition(.move(edge: .leading))
+                    } else {
+                        portfolioCoinList()
+                            .transition(.move(edge: .trailing))
+                    }
+                    
+                    Spacer(minLength: 0)
                 }
-                
-                Spacer(minLength: 0)
+                .background(
+                    NavigationLink(isActive: $showDetailView, destination: { DetailView(coin: $selectedCoin) }, label: { EmptyView() })
+                )
+                .navigationBarHidden(true)
             }
         }
     }
@@ -85,14 +95,13 @@ extension HomeView {
     func allCoinList() -> some View {
         List {
             ForEach(vm.allCoins) { coin in
-                
-                NavigationLink {
-                    DetailView(coin: coin)
-                } label: {
-                    CoinRowView(coin: coin, showHoldingColumns: false)
-                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
-                }
 
+                    CoinRowView(coin: coin, showHoldingColumns: false)
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
+                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                       
             }
         }
         .listStyle(.plain)
@@ -104,6 +113,9 @@ extension HomeView {
             ForEach(vm.allCoins) { coin in
                 CoinRowView(coin: coin, showHoldingColumns: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .listStyle(.plain)
@@ -167,5 +179,10 @@ extension HomeView {
         .foregroundStyle(Color.theme.secondaryText)
         .padding(.horizontal)
         
+    }
+    
+    private func segue(coin: CoinModel) {
+        selectedCoin = coin
+        showDetailView = true
     }
 }

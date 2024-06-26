@@ -19,10 +19,10 @@ struct SampleCryptoAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            
                 HomeView()
-                    .navigationBarHidden(true)
-            }
+                    
+            
             .environmentObject(vm)
         }
     }

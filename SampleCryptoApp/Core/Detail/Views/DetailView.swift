@@ -9,10 +9,12 @@ import SwiftUI
 
 struct DetailView: View {
     
-    let coin: CoinModel
+    @Binding var coin: CoinModel?
     
     var body: some View {
-        Text(coin.name)
+        if let coin {
+            Text(coin.name)
+        }
     }
 }
 
@@ -20,7 +22,7 @@ struct DetailView_Preview: PreviewProvider {
     
     static var previews: some View {
      
-        DetailView(coin: dev.coin)
+        DetailView(coin: .constant(dev.coin) )
         
     }
 }
