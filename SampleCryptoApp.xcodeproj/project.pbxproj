@@ -16,6 +16,8 @@
 		A90571792C25FCE100CA1063 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90571782C25FCE100CA1063 /* CoinImageViewModel.swift */; };
 		A905717B2C2602BD00CA1063 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905717A2C2602BD00CA1063 /* LocalFileManager.swift */; };
 		A905717D2C260ED300CA1063 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905717C2C260ED300CA1063 /* SearchBarView.swift */; };
+		A909273D2C2DFDAB00428408 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909273C2C2DFDAB00428408 /* ChartView.swift */; };
+		A909273F2C2DFE1300428408 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909273E2C2DFE1300428408 /* Date+Extension.swift */; };
 		A91421EC2C274ECA006A701E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91421EB2C274ECA006A701E /* UIApplication.swift */; };
 		A9297F9C2C1E212600089189 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9297F9B2C1E212600089189 /* CircleButtonAnimationView.swift */; };
 		A9297F9F2C1E267700089189 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9297F9E2C1E267700089189 /* CoinModel.swift */; };
@@ -55,6 +57,8 @@
 		A90571782C25FCE100CA1063 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		A905717A2C2602BD00CA1063 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		A905717C2C260ED300CA1063 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		A909273C2C2DFDAB00428408 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		A909273E2C2DFE1300428408 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A91421EB2C274ECA006A701E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		A9297F9B2C1E212600089189 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		A9297F9E2C1E267700089189 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				A92C08832C2AEC4B0025217B /* DetailView.swift */,
+				A909273C2C2DFDAB00428408 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				A9019B2E2C1F6C5600EB6654 /* Double+Extension.swift */,
 				A91421EB2C274ECA006A701E /* UIApplication.swift */,
 				A9D4C2192C2CA99D00C91530 /* String+Extension.swift */,
+				A909273E2C2DFE1300428408 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				A92C087C2C2AD8EA0025217B /* PortfolioContainer.xcdatamodeld in Sources */,
 				A95FD68D2C28B83A00195625 /* StatisticModel.swift in Sources */,
 				A92C08792C2ACC470025217B /* PortfolioDataService.swift in Sources */,
+				A909273D2C2DFDAB00428408 /* ChartView.swift in Sources */,
 				A92C08712C29FADE0025217B /* MarketDataService.swift in Sources */,
 				A92C08772C2ACB050025217B /* CoinLogoView.swift in Sources */,
 				A95FD68F2C28B8ED00195625 /* StatisticView.swift in Sources */,
@@ -361,6 +368,7 @@
 				A9297F9C2C1E212600089189 /* CircleButtonAnimationView.swift in Sources */,
 				A92C08842C2AEC4B0025217B /* DetailView.swift in Sources */,
 				A9019B2F2C1F6C5600EB6654 /* Double+Extension.swift in Sources */,
+				A909273F2C2DFE1300428408 /* Date+Extension.swift in Sources */,
 				A9D4C21A2C2CA99D00C91530 /* String+Extension.swift in Sources */,
 				A9D4C21E2C2CAB1A00C91530 /* DetailViewModel.swift in Sources */,
 				A905717B2C2602BD00CA1063 /* LocalFileManager.swift in Sources */,
