@@ -37,7 +37,8 @@ struct DetailView: View {
         
         ScrollView {
             VStack {
-                
+                ChartView(coin: vm.coin)
+                                 .padding(.vertical)
                 VStack(spacing: 20) {
                     overviewTitle
                     Divider()
