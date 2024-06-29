@@ -24,7 +24,7 @@ struct CoinRowView: View {
             rightColumn()
         }
         .font(.subheadline)
-        .background(Color.green.opacity(0.0).frame(maxWidth: .infinity,maxHeight: .infinity))
+        .background(Color.green.opacity(0.001).frame(maxWidth: .infinity,maxHeight: .infinity))
     }
 }
 
