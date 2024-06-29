@@ -12,13 +12,14 @@ struct HomeView: View {
     @EnvironmentObject private var vm : HomeViewModel
     @State private var showPortfolio = false
     @State private var showPortfolioView = false
+    @State private var showSettingView: Bool = false
     
     @State private var selectedCoin: CoinModel? = nil
     @State private var showDetailView: Bool = false
     var body: some View {
-       
-            NavigationStack {
-                ZStack {
+        
+        NavigationStack {
+            ZStack {
                 // background layer
                 Color.theme.background
                     .sheet(isPresented: $showPortfolioView, content: {
@@ -45,14 +46,19 @@ struct HomeView: View {
                     }
                     
                     Spacer(minLength: 0)
-                }
+                    
+                } 
+                .sheet(isPresented: $showSettingView, content: {
+                    SettingsView()
+                })
+
                 .background(
                     NavigationLink(isActive: $showDetailView, destination: { DetailLoadingView(coin: $selectedCoin) }, label: { EmptyView() })
                 )
                 .navigationBarHidden(true)
             }
-        }
-    }
+            
+        }    }
 }
 
 #Preview {
@@ -70,6 +76,8 @@ extension HomeView {
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView = true
+                    } else {
+                        showSettingView = true
                     }
                 }
                 .background(CircleButtonAnimationView(animate: $showPortfolio))
@@ -95,13 +103,13 @@ extension HomeView {
     func allCoinList() -> some View {
         List {
             ForEach(vm.allCoins) { coin in
-
-                    CoinRowView(coin: coin, showHoldingColumns: false)
+                
+                CoinRowView(coin: coin, showHoldingColumns: false)
                     .onTapGesture {
                         segue(coin: coin)
                     }
-                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
-                       
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                
             }
         }
         .listStyle(.plain)
@@ -110,7 +118,7 @@ extension HomeView {
     @ViewBuilder
     func portfolioCoinList() -> some View {
         List {
-            ForEach(vm.allCoins) { coin in
+            ForEach(vm.portfolioCoins) { coin in
                 CoinRowView(coin: coin, showHoldingColumns: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
                     .onTapGesture {
@@ -134,7 +142,7 @@ extension HomeView {
                 withAnimation {
                     vm.sortOption = vm.sortOption == .rank ? .rankReversed : .rank
                 }
-               
+                
             }
             
             Spacer()
